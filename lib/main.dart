@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'app/routs/app_routs.dart';
+import 'core/dependency_injection/di.dart';
+import 'core/route/app_routs.dart';
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+   initAppModule();
   runApp( MyApp());
 }
 
