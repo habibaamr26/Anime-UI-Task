@@ -1,16 +1,36 @@
-# ui_task
+# Anime UI
+A Flutter UI for an anime streaming app with three screens: home, show details and an upgrade plan page. The content comes from a local data source, so the app runs without a backend.
 
-A new Flutter project.
+## Features
+- Home screen with categories, a list of shows and a "Top Characters" section
+- Show details screen with views, claps and seasons, a description and a bottom sheet with "Preview" and "Watch Now" buttons
+- Upgrade plan screen where the user picks a monthly or annual plan
+- Custom bottom navigation bar
+- Named routes with a route generator
+- Local data source, repository and domain models wired with get_it
 
-## Getting Started
+## Tech stack
+- Flutter, Dart
+- Dependency injection: get_it
+- SVG assets: flutter_svg
 
-This project is a starting point for a Flutter application.
+## Project structure
+```
+lib/
+├── core/
+│   ├── app_constants/          colors, text styles, strings, sizes and asset paths
+│   ├── dependency_injection/   get_it setup
+│   └── route/                  route generator
+├── feature/
+│   └── home/
+│       ├── data/               local data source, response models and repository implementation
+│       ├── domain/             domain models and repository interface
+│       └── presentation/       home, details and upgrade plan screens with their widgets
+└── main.dart
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Getting started
+```
+flutter pub get
+flutter run
+```
